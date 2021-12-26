@@ -1,30 +1,19 @@
 import React from "react";
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import "./App.css";
+import Hello from './pages/Hello';
+import Index from './pages/Index';
+import Nav from './components/Nav';
 
 function App() {
   return (
-    <div className="App">
-      <div className="title">
-        <h1>Hello Pastita!</h1>
-      </div>
-
-      <br />
-      <div className="clientForm">
-        <label htmlFor="">Name:</label>
-        <input type="text" />
-
-        <label htmlFor="">Age:</label>
-        <input type="number" />
-
-        <label htmlFor="">Position:</label>
-        <input type="text" />
-
-        <label htmlFor="">Wage(Year):</label>
-        <input type="number" />
-
-        <button>Add Employee</button>
-      </div>
-    </div>
+    <Router>
+      <Nav />
+      <Routes>
+        <Route path='/' element={<Index />} />
+        <Route path='hello' element={<Hello />} />
+      </Routes>
+    </Router>
   );
 }
 
