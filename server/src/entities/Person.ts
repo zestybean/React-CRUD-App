@@ -1,8 +1,8 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class User {
-  @PrimaryGeneratedColumn('uuid')
+export class Person {
+  @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Column()
@@ -12,8 +12,8 @@ export class User {
   age: number;
 
   @Column()
-  position: string;
+  wage: number;
 
   @Column()
-  wage: number;
+  position: string;
 }
