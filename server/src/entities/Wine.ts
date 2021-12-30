@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Wine {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   id: string;
 
   // year
@@ -47,5 +47,5 @@ export class Wine {
   abv: number;
 
   @Column()
-  tasting_notes: string;
+  tastingNotes: string;
 }
