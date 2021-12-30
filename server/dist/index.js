@@ -15,13 +15,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("reflect-metadata");
 const express_1 = __importDefault(require("express"));
 const typeorm_1 = require("typeorm");
-const person_1 = require("./entities/person");
+const Person_1 = require("./entities/Person");
 (0, typeorm_1.createConnection)()
     .then((connection) => __awaiter(void 0, void 0, void 0, function* () {
     const PORT = process.env.PORT || 3001;
     const app = (0, express_1.default)();
     app.post("/new_person", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const person = new person_1.Person();
+        const person = new Person_1.Person();
         person.name = "test";
         person.age = 24;
         person.wage = 32;
@@ -38,7 +38,7 @@ const person_1 = require("./entities/person");
         console.log(`Server listening on ${PORT}`);
     });
     // Returns all Person rows in the Person table
-    const personRepo = connection.getRepository(person_1.Person);
+    const personRepo = connection.getRepository(Person_1.Person);
     const savedpersons = yield personRepo.find();
     // tslint:disable-next-line:no-console
     console.log("All persons in the DB: ", savedpersons);

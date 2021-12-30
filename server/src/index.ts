@@ -1,13 +1,7 @@
-import {
-  graphql,
-  GraphQLSchema,
-  GraphQLObjectType,
-  GraphQLString,
-} from "graphql";
 import "reflect-metadata";
 import express, { Request, Response } from "express";
 import { createConnection } from "typeorm";
-import { Person } from "./entities/person";
+import { Person } from "./entities/Person";
 
 createConnection()
   .then(async (connection) => {
