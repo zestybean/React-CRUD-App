@@ -4,7 +4,7 @@ function HomeForm() {
   return (
     <div className="App">
       <div className="title">
-        <h1>Hello Pastita!</h1>
+        <h1 className="text-3xl font-bold underline">Hello Pastita!</h1>
       </div>
 
       <br />
