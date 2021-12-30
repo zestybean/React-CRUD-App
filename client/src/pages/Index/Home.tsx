@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 function HomeForm() {
-  return(
-  <div className="App">
+  return (
+    <div className="App">
       <div className="title">
         <h1>Hello Pastita!</h1>
       </div>
