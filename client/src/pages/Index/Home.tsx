@@ -2,26 +2,57 @@ import React from "react";
 
 function HomeForm() {
   return (
-    <div className="App">
-      <div className="title">
-        <h1 className="text-3xl font-bold underline">Hello Pastita!</h1>
-      </div>
+    <div className="bg-indigo-500">
+      <div className="flex h-screen">
+        <div className="m-auto">
+          <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div className="title">
+              <h1 className="text-4xl font-bold mb-4">Drink Form 🍺</h1>
+            </div>
 
-      <br />
-      <div className="clientForm">
-        <label htmlFor="">Name:</label>
-        <input type="text" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Name:
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline"
+                placeholder="Name"
+              />
+            </div>
 
-        <label htmlFor="">Age:</label>
-        <input type="number" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Position:
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline"
+                placeholder="Position"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Age:
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline"
+                placeholder="99"
+              />
+            </div>
+            <div className="mb-8">
+              <label className="block text-gray-700 text-sm font-bold mb-2">
+                Wage(Yearly):
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:shadow-outline"
+                placeholder="100K"
+              />
+            </div>
 
-        <label htmlFor="">Position:</label>
-        <input type="text" />
-
-        <label htmlFor="">Wage(Year):</label>
-        <input type="number" />
-
-        <button>Add Employee</button>
+            <button className="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline">
+              Pour Drink
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );
