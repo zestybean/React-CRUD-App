@@ -18,9 +18,9 @@ export class CocktailIngredient {
 
   @OneToOne(() => MeasurementQty)
   @JoinTable()
-  measurement_quantity: MeasurementQty;
+  measurementQuantity: MeasurementQty;
 
   @OneToOne(() => MeasurementUnit)
   @JoinTable()
-  measurement_unit: MeasurementUnit;
+  measurementUnit: MeasurementUnit;
 }

@@ -6,7 +6,7 @@ import {Entity, Column, PrimaryGeneratedColumn, TableInheritance} from "typeorm"
 export abstract class Ingredient {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-  
+
   @Column()
   name: string;
 
@@ -22,7 +22,7 @@ export abstract class Ingredient {
 
   @Column()
   subregion: string;
-  
+
   @Column()
   description: string;
 }

@@ -6,5 +6,5 @@ export class MeasurementUnit {
   id: number;
 
   @Column()
-  measurement_unit: string;
+  measurementUnit: string;
 }

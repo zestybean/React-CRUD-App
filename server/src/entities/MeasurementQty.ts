@@ -6,7 +6,7 @@ export class MeasurementQty {
   id: number;
 
   @Column()
-  measurement_amount: number;
+  measurementAmount: number;
 }
 
 
