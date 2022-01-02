@@ -1,23 +1,13 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { ChildEntity, Column } from "typeorm";
+import {Ingredient} from "./Ingredient";
 
-@Entity()
-export class Wine {
-  @PrimaryGeneratedColumn("uuid")
-  id: string;
-
+@ChildEntity()
+export class Wine extends Ingredient{
   // year
   @Column()
   vintage: number;
 
-  // red or white or rose or etc.
-  @Column()
-  type: string;
-
-  // who makes the wine
-  @Column()
-  producer: string;
-
-  // pinot noir, red blend, etc
+ // pinot noir, red blend, etc
   @Column()
   variety: string;
 
@@ -30,22 +20,7 @@ export class Wine {
   @Column()
   vineyard: string;
 
-  @Column()
-  country: string;
-
-  @Column()
-  region: string;
-
-  @Column()
-  subregion: string;
-
   // legal name of the wine (champagne, bourdoux, etc.)
   @Column()
   appelation: string;
-
-  @Column()
-  abv: number;
-
-  @Column()
-  tastingNotes: string;
 }

@@ -1,16 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Column, ChildEntity } from "typeorm";
+import {Ingredient} from "./Ingredient";
 
-@Entity()
-export class Liquor {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
-  @Column()
-  name: string;
-
-  @Column()
-  producer: string;
-
+@ChildEntity()
+export class Liquor extends Ingredient {
   // tequila, rum, whiskey, etc
   @Column()
   type: string;
@@ -21,14 +13,4 @@ export class Liquor {
 
   @Column()
   age: number;
-
-  @Column()
-  abv: number;
-
-  // may or may not be applicable depending on the spirit/producer
-  @Column()
-  region: string;
-
-  @Column()
-  subregion: string;
 }
