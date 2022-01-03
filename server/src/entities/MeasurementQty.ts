@@ -1,4 +1,4 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class MeasurementQty {
@@ -9,4 +9,4 @@ export class MeasurementQty {
   measurementAmount: number;
 }
 
-
+export default MeasurementQty;

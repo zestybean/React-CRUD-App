@@ -2,6 +2,13 @@ import "reflect-metadata";
 import express, { Request, Response } from "express";
 import { createConnection } from "typeorm";
 import { Person } from "./entities/Person";
+import {
+  Cocktail,
+  CocktailIngredient,
+  MeasurementUnit,
+  MeasurementQty,
+  Liquor,
+} from "./entities";
 
 createConnection()
   .then(async (connection) => {
@@ -22,6 +29,27 @@ createConnection()
       });
 
       res.send(person);
+    });
+
+    app.post("/make_qty", async (req: Request, res: Response) => {
+      const qty = new MeasurementQty();
+    });
+
+    app.post("/make_unit", async (req: Request, res: Response) => {
+      const unit = new MeasurementUnit();
+    });
+
+    app.post("/make_unit", async (req: Request, res: Response) => {
+      const liquor = new Liquor();
+    });
+
+    app.post("/make_cocking", async (req: Request, res: Response) => {
+      const cocking = new CocktailIngredient();
+    });
+
+    // LAST POST
+    app.post("/make_cock", async (req: Request, res: Response) => {
+      const cocktail = new Cocktail();
     });
 
     app.listen(PORT, () => {

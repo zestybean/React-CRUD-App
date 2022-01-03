@@ -16,6 +16,7 @@ require("reflect-metadata");
 const express_1 = __importDefault(require("express"));
 const typeorm_1 = require("typeorm");
 const Person_1 = require("./entities/Person");
+const entities_1 = require("./entities");
 (0, typeorm_1.createConnection)()
     .then((connection) => __awaiter(void 0, void 0, void 0, function* () {
     const PORT = process.env.PORT || 3001;
@@ -32,6 +33,22 @@ const Person_1 = require("./entities/Person");
             console.log("Person saved with id of: ", u.id);
         });
         res.send(person);
+    }));
+    app.post("/make_qty", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        const qty = new entities_1.MeasurementQty();
+    }));
+    app.post("/make_unit", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        const unit = new entities_1.MeasurementUnit();
+    }));
+    app.post("/make_unit", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        const liquor = new entities_1.Liquor();
+    }));
+    app.post("/make_cocking", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        const cocking = new entities_1.CocktailIngredient();
+    }));
+    // LAST POST
+    app.post("/make_cock", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        const cocktail = new entities_1.Cocktail();
     }));
     app.listen(PORT, () => {
         // tslint:disable-next-line:no-console

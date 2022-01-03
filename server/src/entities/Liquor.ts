@@ -1,5 +1,5 @@
 import { Column, ChildEntity } from "typeorm";
-import {Ingredient} from "./Ingredient";
+import { Ingredient } from "./Ingredient";
 
 @ChildEntity()
 export class Liquor extends Ingredient {
@@ -14,3 +14,5 @@ export class Liquor extends Ingredient {
   @Column()
   age: number;
 }
+
+export default Liquor;

@@ -1,4 +1,4 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class MeasurementUnit {
@@ -8,3 +8,5 @@ export class MeasurementUnit {
   @Column()
   measurementUnit: string;
 }
+
+export default MeasurementUnit;

@@ -1,10 +1,14 @@
-import {Entity, Column, PrimaryGeneratedColumn, TableInheritance} from "typeorm";
-
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  TableInheritance,
+} from "typeorm";
 
 @Entity()
 @TableInheritance({ column: { type: "varchar", name: "type" } })
 export abstract class Ingredient {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   id: string;
 
   @Column()

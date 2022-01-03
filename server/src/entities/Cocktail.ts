@@ -9,7 +9,7 @@ export class Cocktail {
   @Column()
   name: string;
 
-  @OneToMany(() => CocktailIngredient, ingredient => ingredient.cocktail)
+  @OneToMany(() => CocktailIngredient, (ingredient) => ingredient.cocktail)
   ingredients: CocktailIngredient[];
 
   @Column()
@@ -18,3 +18,5 @@ export class Cocktail {
   @Column()
   notes: string;
 }
+
+export default Cocktail;
