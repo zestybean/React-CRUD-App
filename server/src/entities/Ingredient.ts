@@ -8,10 +8,13 @@ import {
 @Entity()
 @TableInheritance({ column: { type: "varchar", name: "type" } })
 export abstract class Ingredient {
-  @PrimaryGeneratedColumn("uuid")
-  id: string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-  @Column()
+  @Column({
+    type: "varchar",
+    unique: true
+  })
   name: string;
 
   @Column()

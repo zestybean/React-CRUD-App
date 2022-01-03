@@ -5,7 +5,7 @@ import { Ingredient } from "./Ingredient";
 export class Liquor extends Ingredient {
   // tequila, rum, whiskey, etc
   @Column()
-  type: string;
+  liquorType: string;
 
   // bourbon, anejo, sctoch, etc
   @Column()

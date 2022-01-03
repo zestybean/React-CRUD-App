@@ -5,5 +5,5 @@ import {Ingredient} from "./Ingredient";
 @ChildEntity()
 export class Mixer extends Ingredient {
   @Column()
-  type: string;
+  mixerType: string;
 }

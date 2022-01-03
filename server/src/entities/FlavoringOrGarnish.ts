@@ -4,7 +4,7 @@ import { Ingredient } from "./Ingredient";
 @ChildEntity()
 export class FlavoringOrGarnish extends Ingredient {
   @Column()
-  type: string;
+  flavoringOrGarnishType: string;
 }
 
 export default FlavoringOrGarnish;

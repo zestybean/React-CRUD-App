@@ -38,7 +38,7 @@ createConnection()
       liquor.age = 12;
       liquor.name = "Kettel One";
       liquor.abv = 12;
-      liquor.type = "vodka";
+      liquor.liquorType = "vodka";
       liquor.region = "Russia";
       liquor.subregion = "Moscow";
       liquor.producer = "Kettel One Imports";
