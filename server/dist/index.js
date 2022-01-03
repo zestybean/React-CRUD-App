@@ -21,7 +21,7 @@ const entities_1 = require("./entities");
     .then((connection) => __awaiter(void 0, void 0, void 0, function* () {
     const PORT = process.env.PORT || 3001;
     const app = (0, express_1.default)();
-    app.post("/new_person", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    app.post("/new_person", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const person = new Person_1.Person();
         person.name = "test";
         person.age = 24;
@@ -34,21 +34,68 @@ const entities_1 = require("./entities");
         });
         res.send(person);
     }));
-    app.post("/make_qty", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    app.post("/make_qty", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const qty = new entities_1.MeasurementQty();
+        qty.measurementAmount = 2;
+        yield connection.manager.save(qty).then((q) => {
+            // tslint:disable-next-line:no-console
+            console.log(`qty ${q.id} added`);
+        });
+        res.send(qty);
     }));
-    app.post("/make_unit", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    app.post("/make_unit", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const unit = new entities_1.MeasurementUnit();
+        unit.measurementUnit = "Oz.";
+        yield connection.manager.save(unit).then((q) => {
+            // tslint:disable-next-line:no-console
+            console.log(`qty ${q.id} added`);
+        });
+        res.send(unit);
     }));
-    app.post("/make_unit", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    app.post("/make_liquor", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const liquor = new entities_1.Liquor();
-    }));
-    app.post("/make_cocking", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const cocking = new entities_1.CocktailIngredient();
+        liquor.age = 12;
+        liquor.name = "Kettel One";
+        liquor.abv = 12;
+        liquor.type = "vodka";
+        liquor.region = "Russia";
+        liquor.producer = "Kettel One Imports";
+        liquor.description = "Mmm, delicious kettel one";
+        yield connection.manager.save(liquor).then((q) => {
+            // tslint:disable-next-line:no-console
+            console.log(`liquor ${q.id} added`);
+        });
+        res.send(liquor);
     }));
     // LAST POST
-    app.post("/make_cock", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    app.post("/make_cock", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const cocktail = new entities_1.Cocktail();
+        const liquor = new entities_1.Liquor();
+        liquor.age = 12;
+        liquor.name = "Kettel One";
+        liquor.abv = 12;
+        liquor.type = "vodka";
+        liquor.region = "Russia";
+        liquor.subregion = "Moscow";
+        liquor.producer = "Kettel One Imports";
+        liquor.description = "Mmm, delicious kettel one";
+        const unit = new entities_1.MeasurementUnit();
+        unit.measurementUnit = "Oz.";
+        const qty = new entities_1.MeasurementQty();
+        qty.measurementAmount = 2;
+        const cocking = new entities_1.CocktailIngredient();
+        cocking.measurementUnit = unit;
+        cocking.measurementQuantity = qty;
+        cocking.ingredient = liquor;
+        cocktail.ingredients = [cocking];
+        cocktail.name = "voka";
+        cocktail.notes = "tastes like shit";
+        cocktail.instructions = "pour the vodka into the cup";
+        yield connection.manager.save(cocktail).then((q) => {
+            // tslint:disable-next-line:no-console
+            console.log(`cocktail with id ${q.id} added`);
+        });
+        res.send(cocktail);
     }));
     app.listen(PORT, () => {
         // tslint:disable-next-line:no-console

@@ -15,18 +15,26 @@ export class CocktailIngredient {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ManyToOne(() => Cocktail, (cocktail) => cocktail.ingredients)
+  @ManyToOne(() => Cocktail, (cocktail) => cocktail.ingredients, {
+            cascade: ['insert', 'update']
+  })
   cocktail: Cocktail;
 
-  @OneToOne(() => Ingredient)
+  @OneToOne(() => Ingredient, {
+           cascade: true
+  })
   @JoinTable()
   ingredient: Ingredient;
 
-  @OneToOne(() => MeasurementQty)
+  @OneToOne(() => MeasurementQty, {
+           cascade: true
+  })
   @JoinTable()
   measurementQuantity: MeasurementQty;
 
-  @OneToOne(() => MeasurementUnit)
+  @OneToOne(() => MeasurementUnit, {
+           cascade: true
+  })
   @JoinTable()
   measurementUnit: MeasurementUnit;
 }

@@ -9,7 +9,9 @@ export class Cocktail {
   @Column()
   name: string;
 
-  @OneToMany(() => CocktailIngredient, (ingredient) => ingredient.cocktail)
+  @OneToMany(() => CocktailIngredient, (ingredient) => ingredient.cocktail, {
+    cascade: true
+  })
   ingredients: CocktailIngredient[];
 
   @Column()
