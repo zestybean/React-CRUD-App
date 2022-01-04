@@ -4,3 +4,4 @@ export { default as FlavoringOrGarnish } from "./FlavoringOrGarnish";
 export { default as MeasurementUnit } from "./MeasurementUnit";
 export { default as MeasurementQty } from "./MeasurementQty";
 export { default as Liquor } from "./Liquor";
+export { default as Ingredient } from "./Ingredient";

@@ -33,3 +33,5 @@ export class Ingredient {
   @Column()
   description: string;
 }
+
+export default Ingredient;

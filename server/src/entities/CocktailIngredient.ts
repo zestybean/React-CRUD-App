@@ -3,12 +3,9 @@ import {
   Entity,
   ManyToOne,
   OneToOne,
-  JoinTable,
+  JoinColumn,
 } from "typeorm";
-import { Cocktail } from "./Cocktail";
-import { Ingredient } from "./Ingredient";
-import { MeasurementQty } from "./MeasurementQty";
-import { MeasurementUnit } from "./MeasurementUnit";
+import { Cocktail, Ingredient, MeasurementQty, MeasurementUnit } from "./entities";
 
 @Entity()
 export class CocktailIngredient {
@@ -23,19 +20,19 @@ export class CocktailIngredient {
   @OneToOne(() => Ingredient, {
            cascade: true
   })
-  @JoinTable()
+  @JoinColumn()
   ingredient: Ingredient;
 
   @OneToOne(() => MeasurementQty, {
            cascade: true
   })
-  @JoinTable()
+  @JoinColumn()
   measurementQuantity: MeasurementQty;
 
   @OneToOne(() => MeasurementUnit, {
            cascade: true
   })
-  @JoinTable()
+  @JoinColumn()
   measurementUnit: MeasurementUnit;
 }
 
