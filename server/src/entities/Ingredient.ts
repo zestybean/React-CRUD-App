@@ -7,7 +7,7 @@ import {
 
 @Entity()
 @TableInheritance({ column: { type: "varchar", name: "type" } })
-export abstract class Ingredient {
+export class Ingredient {
   @PrimaryGeneratedColumn()
   id: number;
 
